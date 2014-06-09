@@ -10,7 +10,6 @@ global $advance_login_style_admin_pages;
 //var_dump($advance_login_style_admin_pages);
 $options = get_option( 'advance_login_style_form' );
 
-//$test_structure_admin_pages->admin_header( __( 'General Settings', 'test_structure' ), true, 'bkd_advance_login_style_options', 'test_structure' );
 echo '<script type="text/javascript">
         jQuery(document).ready(function($) {   
         $("#Login_form1_Background_Clore").wpColorPicker();
@@ -58,15 +57,8 @@ echo '<script type="text/javascript">
         $("#onhover_button_color").wpColorPicker();
         });             
         </script>';
-		
-
-		
-
-
-
+	
 echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance_login_style' ), true, 'cb_advance_login_style_form_options', 'advance_login_style_form' );
-//echo $advance_login_style_admin_pages->textinput('Login_form_Background_Clore','Form Background Color');
-
 echo "</br>";
 
 echo '<script type="text/ecmascript">
@@ -84,8 +76,8 @@ jQuery(document).ready(function($){
 		$("#Login_form_Background_Image").trigger("click");		
 	}			
 });
-
 </script>';
+
 echo  $advance_login_style_admin_pages->selectimage('Login_form_Background_Image','Slect Background Image', '', 'buttonid1', 'upload_logo_preview'); 
 echo "<br/>";
 
@@ -108,29 +100,27 @@ echo "<br/>";
 echo $advance_login_style_admin_pages->inputnumber('form_border_radius','Border Radius');
 echo "<br/>";
 
-
-
 echo $advance_login_style_admin_pages->textinput('Login_form1_Background_lebel_Clore','Leble Color');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->inputnumber('form_lebal_font_size','Leble Font Size'  ,'', 'px');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('form_shadow','Box Shadow');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('Login_form1_Box_shadow_Clore','Box Shadow Color');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('button_color','Button Color');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('button_text_color','Button Text Color');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('button_border_color',' Button Border Color');
 echo "<br/>";
+
 echo $advance_login_style_admin_pages->textinput('onhover_button_color',' Onhover Button Color');
 
-
-
-
-//echo $advance_login_style_admin_pages->inputnumber('form_opacity', 'Opacity');
-
 $advance_login_style_admin_pages->admin_footer();
-
-

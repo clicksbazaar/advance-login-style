@@ -1,15 +1,15 @@
 <?php   
     /* 
-    Plugin Name: advance_login_style
+    Plugin Name: Advance Login Style
 	Plugin URI: https://clicksbazaar.com/ 
-    Description: multi line description
+    Description: Advance Login Style can fully customise your WordPress Login, Register page.
 	Author: clicksbazaar.com 
-    Version: 0.9 
-	Short Name: advance login style
+    Version: 1.0 
+	Short Name: advance_login_style
     Author URI: https://clicsbazaar.com/
 	Requires at least: 2.7
 	Tested up to: 3.9.1
-	Stable tag: 1.1
+	Stable tag: 1.0
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
     */  
@@ -39,7 +39,7 @@ if ( !defined( 'advance_login_style_BASENAME' ) )
 	define( 'advance_login_style_BASENAME', plugin_basename( __FILE__ ) );
 	
 if ( !defined( 'advance_login_style_VERSION' ) )
-	define( 'advance_login_style_VERSION', '1.1' );
+	define( 'advance_login_style_VERSION', '1.0' );
 	
 function advance_login_style_load_textdomain() {
 	load_plugin_textdomain( 'advance_login_style', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
@@ -88,7 +88,6 @@ if ( !defined( 'DOING_AJAX' ) || !DOING_AJAX )
 require advance_login_style_PATH . 'advance_login_style-inc/advance_login_style-functions.php';
 
 
-
 if ( is_admin() ) {
 
 	add_action( 'plugins_loaded', 'advance_login_style_admin_init', 1 );
@@ -100,8 +99,8 @@ if ( is_admin() ) {
 }
 else 
 {
-//front end
-//require advance_login_style_PATH. 'advance_login_style-frontend/plugin-bazaar-login.php';
-require advance_login_style_PATH. 'advance_login_style-frontend/advance_login_style-front.php';
+	//front end
+	//require advance_login_style_PATH. 'advance_login_style-frontend/plugin-bazaar-login.php';
+	require advance_login_style_PATH. 'advance_login_style-frontend/advance_login_style-front.php';
 }
 unset( $options );

@@ -16,7 +16,7 @@
 */
 function advance_login_style_activate() {
 
-		advance_login_style_defaults();
+	advance_login_style_defaults();
 	
 	if ( function_exists( 'w3tc_pgcache_flush' ) ) {
 		w3tc_pgcache_flush();
@@ -37,9 +37,10 @@ function advance_login_style_defaults() {
 			//'bckcolor'  => 'on',
 			//'form_shadow'=>'5px 5px 10px',
 		);
+		
 	update_option( 'advance_login_style', $opt );
 
-$opt_form = array(
+	$opt_form = array(
 			//'bckcolor'  => 'on',
 			'form_shadow'=>'5px 5px 10px',
 			'form_lebal_font_size'=>'14',
@@ -49,6 +50,7 @@ $opt_form = array(
 			'background_size'=>'80',
 			'logo_height'=>'80',
 			'logo_width'=>'80',
+			'Login_logo_Image'=>'images/advance-login-style80x80.png',
 			
 		);
 	update_option( 'advance_login_style_form', $opt_form );

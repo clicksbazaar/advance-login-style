@@ -86,7 +86,7 @@ class advance_login_style_Admin {
 	function register_settings_page() {
 			
 		//$advance_login_style_page=add_theme_page('WP AB Theme', 'WP AB Theme', 'edit_theme_options', 'advance_login_style_dashboard', array( $this, 'config_page' ));
-		add_menu_page( 'Advance Login Style', 'Advance Login Style', 'manage_options','advance_login_style-dashboard', array( $this, 'config_page' ), plugins_url( 'myplugin/images/icon.png' ), 6 );
+		add_menu_page( 'Advance Login Style', 'Advance Login', 'manage_options','advance_login_style-dashboard', array( $this, 'config_page' ),advance_login_style_URL . 'images/advance-login-style20x20.png', 6 );
 		
 		
 		add_submenu_page( 'advance_login_style-dashboard', 'Login Form', 'Login Form', 'manage_options', 'advance_login_style_form-dashboard', array( $this, 'form_page' )); 

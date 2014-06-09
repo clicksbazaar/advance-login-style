@@ -2,11 +2,13 @@
 /**
  * @package Admin
  */
-if ( !class_exists( 'advance_login_style_Admin_Pages' ) ) {
+if ( !class_exists( 'advance_login_style_Admin_Pages' ) ) 
+{
 /**
  * Class that holds most of the admin page functionality for WP AB Theme Testing Plugin.
  */
-class advance_login_style_Admin_Pages {
+class advance_login_style_Admin_Pages 
+{
 
 	/**
 	* Current options value.
@@ -308,104 +310,95 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 	    }
 		return '<label class="select" for="' . $var_esc . '">' . $label . ':</label><select name="' . $option . '[' . $var_esc . '][]" id="wpab' . $var_esc . '" multiple="multiple">'.$opti.'</select>'.'<br class="clear"/>';
 	}
-function textinput( $var, $label, $option = '' ) {
-if ( empty( $option ) )
-$option = $this->currentoption;
+	function textinput( $var, $label, $option = '', $placeholder='' )
+	{
+		if ( empty( $option ) )
+			$option = $this->currentoption;
+			$options = $this->get_option( $option );
+			$val = '';
+				if ( isset( $options[$var] ) )
+					$val = esc_attr( $options[$var] );
+					return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':</label><input placeholder="'.$placeholder.'" class="textinput" type="text" id="' . esc_attr( $var ) . '" name="' . $option . '[' . esc_attr( $var ) . ']" value="' . $val . '"/>' . '<br class="clear" />';
+	}
 
-$options = $this->get_option( $option );
+	function inputnumber( $var, $label, $option = '', $rightlabel='' )
+	{
+		if ( empty( $option ) )
+			$option = $this->currentoption;
+			$options = $this->get_option( $option );
+			$val = '';
+				if ( isset( $options[$var] ) )
+					$val = esc_attr( $options[$var] );
+					return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':</label><input class="number" type="number" id="' . esc_attr( $var ) . '" name="' . $option . '[' . esc_attr( $var ) . ']" value="' . $val . '"/>'.$rightlabel . '<br class="clear" />';
+	}
 
-$val = '';
-if ( isset( $options[$var] ) )
-$val = esc_attr( $options[$var] );
+	function select( $var, $label, $values, $option = '' )
+	{
+		if ( empty( $option ) )
+			$option = $this->currentoption;
+			$options = $this->get_option( $option );
+			$var_esc = esc_attr( $var );
+			$output  = '<label class="select" for="' . $var_esc . '">' . $label . ':</label>';
+			$output .= '<select class="select" name="' . $option . '[' . $var_esc . ']" id="' . $var_esc . '">';
+			foreach ( $values as $value => $label ) 
+			{
+			$sel = '';
+				if ( isset( $options[$var] ) && $options[$var] == $value )
+					$sel = 'selected="selected" ';
 
-return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':</label><input class="textinput" type="text" id="' . esc_attr( $var ) . '" name="' . $option . '[' . esc_attr( $var ) . ']" value="' . $val . '"/>' . '<br class="clear" />';
-}
+						if ( !empty( $label ) )
+							$output .= '<option ' . $sel . 'value="' . esc_attr( $value ) . '">' . $label . '</option>';
+			}
+		$output .= '</select>';
+		return $output . '<br class="clear"/>';
+	}
 
-function inputnumber( $var, $label, $option = '', $rightlabel='' ) {
-if ( empty( $option ) )
-$option = $this->currentoption;
+	function file_upload( $var, $label, $option = '' )
+	{
+		if ( empty( $option ) )
+			$option = $this->currentoption;
+			$options = $this->get_option( $option );
+			$val = '';
+				if ( isset( $options[$var] ) && strtolower( gettype( $options[$var] ) ) == 'array' ) {
+					$val = $options[$var]['url'];
+	}
 
-$options = $this->get_option( $option );
+	$var_esc = esc_attr( $var );
+	$output  = '<label class="select" for="' . $var_esc . '">' . esc_html( $label ) . ':</label>';
+	$output .= '<input type="file" value="' . $val . '" class="textinput" name="' . esc_attr( $option ) . '[' . $var_esc . ']" id="' . $var_esc . '"/>';
 
-$val = '';
-if ( isset( $options[$var] ) )
-$val = esc_attr( $options[$var] );
+		if ( !empty( $options[$var] ) )
+		{
+			$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_file" name="fullseo_local[' . $var_esc . '][file]" value="' . esc_attr( $options[$var]['file'] ) . '"/>';
+			$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_url" name="fullseo_local[' . $var_esc . '][url]" value="' . esc_attr( $options[$var]['url'] ) . '"/>';
+			$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_type" name="fullseo_local[' . $var_esc . '][type]" value="' . esc_attr( $options[$var]['type'] ) . '"/>';
+		}
+			$output .= '<br class="clear"/>';
 
-return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':</label><input class="number" type="number" id="' . esc_attr( $var ) . '" name="' . $option . '[' . esc_attr( $var ) . ']" value="' . $val . '"/>'.$rightlabel . '<br class="clear" />';
-}
+			return $output;
+	}
 
-function select( $var, $label, $values, $option = '' ) {
-if ( empty( $option ) )
-$option = $this->currentoption;
-
-$options = $this->get_option( $option );
-
-$var_esc = esc_attr( $var );
-$output  = '<label class="select" for="' . $var_esc . '">' . $label . ':</label>';
-$output .= '<select class="select" name="' . $option . '[' . $var_esc . ']" id="' . $var_esc . '">';
-
-foreach ( $values as $value => $label ) {
-$sel = '';
-if ( isset( $options[$var] ) && $options[$var] == $value )
-$sel = 'selected="selected" ';
-
-if ( !empty( $label ) )
-$output .= '<option ' . $sel . 'value="' . esc_attr( $value ) . '">' . $label . '</option>';
-}
-$output .= '</select>';
-return $output . '<br class="clear"/>';
-}
-
-
-function file_upload( $var, $label, $option = '' ) {
-if ( empty( $option ) )
-$option = $this->currentoption;
-
-$options = $this->get_option( $option );
-
-$val = '';
-if ( isset( $options[$var] ) && strtolower( gettype( $options[$var] ) ) == 'array' ) {
-$val = $options[$var]['url'];
-}
-
-$var_esc = esc_attr( $var );
-$output  = '<label class="select" for="' . $var_esc . '">' . esc_html( $label ) . ':</label>';
-$output .= '<input type="file" value="' . $val . '" class="textinput" name="' . esc_attr( $option ) . '[' . $var_esc . ']" id="' . $var_esc . '"/>';
-
-if ( !empty( $options[$var] ) ) {
-$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_file" name="fullseo_local[' . $var_esc . '][file]" value="' . esc_attr( $options[$var]['file'] ) . '"/>';
-$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_url" name="fullseo_local[' . $var_esc . '][url]" value="' . esc_attr( $options[$var]['url'] ) . '"/>';
-$output .= '<input class="hidden" type="hidden" id="' . $var_esc . '_type" name="fullseo_local[' . $var_esc . '][type]" value="' . esc_attr( $options[$var]['type'] ) . '"/>';
-}
-$output .= '<br class="clear"/>';
-
-return $output;
-}
-
-function radio( $var, $values, $label, $option = '' ) {
-if ( empty( $option ) )
-$option = $this->currentoption;
-
-$options = $this->get_option( $option );
-
-if ( !isset( $options[$var] ) )
-$options[$var] = false;
-
-$var_esc = esc_attr( $var );
-
-$output = '<div><label class="select">' . $label . ':</label>';
-foreach ( $values as $key => $value ) {
-$key = esc_attr( $key );
-$output .= '<div><input type="radio" class="radio" id="' . $var_esc . '-' . $key . '" name="' . esc_attr( $option ) . '[' . $var_esc . ']" value="' . $key . '" ' . ( $options[$var] == $key ? ' checked="checked"' : '' ) . ' /> <label class="wpfullseo_radio" for="' . $var_esc . '-' . $key . '">' . esc_attr( $value ) . '</label></div>';
-}
-$output .= '</div>';
-
-return $output;
-}
+	function radio( $var, $values, $label, $option = '' )
+	{
+		if ( empty( $option ) )
+			$option = $this->currentoption;
+			$options = $this->get_option( $option );
+			if ( !isset( $options[$var] ) )
+				$options[$var] = false;
+				$var_esc = esc_attr( $var );
+				$output = '<div><label class="select">' . $label . ':</label>';
+				foreach ( $values as $key => $value ) 
+				{
+					$key = esc_attr( $key );
+					$output .= '<div><input type="radio" class="radio" id="' . $var_esc . '-' . $key . '" name="' . esc_attr( $option ) . '[' . $var_esc . ']" value="' . $key . '" ' . ( $options[$var] == $key ? ' checked="checked"' : '' ) . ' /> <label class="wpfullseo_radio" for="' . $var_esc . '-' . $key . '">' . esc_attr( $value ) . '</label></div>';
+				}
+					$output .= '</div>';
+					return $output;
+	}
 } 
 
-global $advance_login_style_admin_pages;
+	global $advance_login_style_admin_pages;
 
-$advance_login_style_admin_pages = new advance_login_style_Admin_Pages();
+	$advance_login_style_admin_pages = new advance_login_style_Admin_Pages();
 
-}
+	}

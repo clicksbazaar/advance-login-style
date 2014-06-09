@@ -10,7 +10,6 @@ global $advance_login_style_admin_pages;
 //var_dump($advance_login_style_admin_pages);
 $options = get_option( 'advance_login_style_logo' );
 
-//$test_structure_admin_pages->admin_header( __( 'General Settings', 'test_structure' ), true, 'bkd_advance_login_style_options', 'test_structure' );
 echo '<script type="text/javascript">
         jQuery(document).ready(function($) {   
         $("#LoginF_orm_Background_Clore").wpColorPicker();
@@ -25,15 +24,16 @@ echo '<script type="text/javascript">
 		
 		echo '<script type="text/javascript">
         jQuery(document).ready(function($) {   
-        $("#text_logo_font_color").wpColorPicker();
+        $("#text_font_color").wpColorPicker();
+        });             
+        </script>';
+		echo '<script type="text/javascript">
+        jQuery(document).ready(function($) {   
+        $("#text_font_shadow_color").wpColorPicker();
         });             
         </script>';
 
-
-
 echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance_login_style' ), true, 'cb_advance_login_style_logo_options', 'advance_login_style_logo' );
-
-
 
 echo '<script type="text/ecmascript">
 jQuery(document).ready(function($){
@@ -64,22 +64,21 @@ echo $advance_login_style_admin_pages->inputnumber('logo_width', 'Width'  ,'', '
 echo "<br/>";
 
 echo $advance_login_style_admin_pages->select('logo_logo__repeat', 'Repeat Background',array('no-repeat'=>'no-repeat','repeat'=>'repeat','x-repeat'=>'x-repeat','y-repeat'=>'y-repeat'));
-//echo $advance_login_style_admin_pages->select('logo_position', 'Background Position',array('left'=>'left','right'=>'right','top'=>'top','center'=>'center'));
 echo "<hr>";
 
-echo "<h4>Text Logo</h4>";
+echo "<h2 style=''>Text Message</h2>";
 
-echo $advance_login_style_admin_pages->textinput('text_logo', 'Enter Yout Logo Name');
+echo $advance_login_style_admin_pages->textinput('text_message', 'Enter Yout Message');
 echo "<br/>";
 
-echo $advance_login_style_admin_pages->textinput('text_logo_font_color','Font Text Color');
+echo $advance_login_style_admin_pages->textinput('text_font_color','Message Color');
 echo "<br/>";
 
-echo $advance_login_style_admin_pages->inputnumber('text_logo_font_color', 'Logo Font Size'  ,'', 'px');
+echo $advance_login_style_admin_pages->inputnumber('text_font_size', 'Message Font Size'  ,'', 'px');
 echo "<br/>";
 
-
+echo $advance_login_style_admin_pages->inputnumber('text_shadow_size', 'Shadaw Type'  ,'', 'px');
+echo "<br/>";
+ echo $advance_login_style_admin_pages->textinput('text_font_shadow_color','Shadaw Color');
 
 $advance_login_style_admin_pages->admin_footer();
-
-

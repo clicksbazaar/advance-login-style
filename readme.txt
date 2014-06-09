@@ -1,42 +1,48 @@
-=== tes stucture ===
-Contributors: mythemeshop
-Donate link: https://mythemeshop.com/
-Tags: testing
+=== Advance Login Style ===
+Contributors: pluginsbazaar
+Donate link: https://pluginsbazaar.com/
+Tags: Change Login, Custom Login, Login, Change Login Style, Chage Custom Login style
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wp AB theme testing to test conversion of theme using Google analytic. 
+Advance Login Style can fully customise your WordPress Login, Register page.
 
 == Description ==
 
-This plugin rotates themes for A/B testing integrating with Google Analytics. One theme gets shown for A, another for B and so on (and the user who sees a theme keeps on seeing it when they come back via cookie tracking).
+Advance Login Style can fully customise your WordPress Login, Register page.
 
 = Features of this plugin include: =
 
-
--This plugin let the user(s) choose the themes they want to split test, they could choose as many themes as they want, and then the plugin passes the data over to Analytics, where they could see all the insights of their themes and choose which one is outperforming the other.
+*Ability to add message in your login page.
+*Ability to add a custom logo in your login page.
+*Ability to set login, logout and register redirect links.
+*Ability to set login body background image and also login body. background color.
+*Ability to set login form background image and also login form background color.
+*Ability to change a label font size and color. 
+*Ability to change a button font size and color.
+*Ability to change a link color.
 
 
 == Installation ==
 
-The quickest method for installing the WP AB Theme Testing is:
+The quickest method for installing the Advance Login Style is:
 
 1. Visit Plugins -> Add New in the WordPress dashboard
-2. Type "WP AB Theme Testing" in Search filed and click on 'Search Plugins'
-3. From list of plugins "WP AB Theme Testing" named plugin click "Install Now"
+2. Type "Advance Login Style" in Search filed and click on 'Search Plugins'
+3. From list of plugins "Advance Login Style" named plugin click "Install Now"
 4. Finally click "Activate Plugin"
-5. Configure the plugin by going to the WP AB Theme Testing menu which can be found wordpress menu.
+5. Configure the plugin by going to the Advance Login Style menu which can be found wordpress menu.
 
 If you would prefer to do things manually then follow these instructions:
 
-1. Upload the `wp-ab-theme-testing` folder to the `/wp-content/plugins/` directory.
-2. Activate the WP AB Theme Testing plugin through the 'Plugins' menu in WordPress.
-3. Configure the plugin by going to the WP AB Theme Testing menu which can be found wordpress menu.
+1. Upload the `advance_login_style` folder to the `/wp-content/plugins/` directory.
+2. Activate the Advance Login Style plugin through the 'Plugins' menu in WordPress.
+3. Configure the plugin by going to the Advance Login Style menu which can be found wordpress menu.
 
-== FAQ ==
+== Frequently Asked Questions ==
 
 = A question that someone might have =
 
@@ -48,22 +54,24 @@ Answer to foo bar dilemma.
 
 == Screenshots ==
 
-1. [Wp AB Theme Testing - Dashboard](https://mythemeshop.com/)
+1. Advance Login Style
+
+2. login form
+3. login logo
+4. example login page
+ 
 
 == Changelog ==
 
-= 1.1 =
-* Bug fix #1 : Google Analytics code issue 
- 
 = 1.0 =
 * First public release.
 
 
 == Upgrade Notice ==
 
-= 1.1 =
-Bug fix #1.
+= 1.0 =
+First public release.
 
 == License ==
-Maintatine version release. 
+
 
