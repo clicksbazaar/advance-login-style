@@ -81,13 +81,12 @@ function advance_login_style_enque_script(){
 	$logo='.login h1 a {';
 	if(isset($options['Login_logo_Image']) && !empty($options['Login_logo_Image']))
 	{
-		$logo.='background-image:url('.$options['Login_logo_Image'].') !important;';
+		$logo.='background-image:url('.$options['Login_logo_Image'].');';
+		
 	}
 	else
 	{
-				$logo.='background-image:url('.advance_login_style_URL . 'images/advance-login-style80x80.png'.') !important;';
-
-		//$logo.=advance_login_style_URL . 'images/advance-login-style20x20.png'
+		$logo.='background-image:url('.advance_login_style_URL . 'images/advance-login-style80x80.png'.') !important;';
 	}
 	
 	if(isset($options['logo_height']))
@@ -228,8 +227,7 @@ function advance_login_style_enque_script(){
 	function advance_login_style_login_redirect()
 	{
 		$options=get_advance_login_style_options();
-		if(isset($options['After_Login_Redirect_Link']))
-		{
+		
 			$options= $options['After_Login_Redirect_Link'];
 			if ( !empty($options) )
 			{
@@ -237,7 +235,7 @@ function advance_login_style_enque_script(){
 				return $options;
 			}
 			else return admin_url();
-		}
+		
 	}
 
 	add_action( 'login_enqueue_scripts', 'advance_login_style_enque_script', 1 );

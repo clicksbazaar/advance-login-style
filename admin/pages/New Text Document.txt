@@ -1,8 +1,0 @@
-<?php 
-
-echo '<ul>';
-	echo '<li><a href="'.admin_url('options-general.php?page=test_structure-dashboard').'"> First</a> </li>';
-	echo '<li>sechond</li>';
-	echo '<li>third</li>';
-	echo '<li>fourth</li>';
-echo '</ul>';
