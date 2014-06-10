@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Advance Login Style can fully customise your WordPress Login, Register page.
+Advance Login Style can fully customize your WordPress Login, Register page.
 
 == Description ==
 

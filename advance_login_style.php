@@ -2,7 +2,7 @@
     /* 
     Plugin Name: Advance Login Style
 	Plugin URI: https://pluginsbazaar.com/ 
-    Description: Advance Login Style can fully customise your WordPress Login, Register page.
+    Description: Advance Login Style can fully customize your WordPress Login, Register page.
 	Author: pluginsbazaar.com 
     Version: 1.0 
 	Short Name: advance_login_style
