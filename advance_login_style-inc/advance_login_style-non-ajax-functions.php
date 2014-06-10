@@ -23,7 +23,7 @@ function advance_login_style_activate() {
 	} else if ( function_exists( 'wp_cache_clear_cache' ) ) {
 		wp_cache_clear_cache();
 	}
-
+ 
 }
 
 /** 
@@ -50,10 +50,18 @@ function advance_login_style_defaults() {
 			'background_size'=>'80',
 			'logo_height'=>'80',
 			'logo_width'=>'80',
-		'Login_logo_Image'=>'background-image:url(' .advance_login_style_URL.''.plugins_url().'images/advance-login-style80x80.png'.')',
+		//'Login_logo_Image'=>'background-image:url(' .advance_login_style_URL.''.plugins_url().'images/advance-login-style80x80.png'.')',
 			
 		);
 	update_option( 'advance_login_style_form', $opt_form );
+	
+	$opt_logo = array(
+			//'bckcolor'  => 'on',
+			//'text_message'=>'fsdfsdf',
+		//'Login_logo_Image'=>'background-image:url(' .advance_login_style_URL.'images/advance-login-style80x80.png'.')',
+			
+		);
+	update_option( 'advance_login_style_logo', $opt_logo);
 	
 	
 }

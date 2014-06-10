@@ -86,7 +86,7 @@ function advance_login_style_enque_script(){
 	}
 	else
 	{
-		$logo.='background-image:url('.advance_login_style_URL . 'images/advance-login-style80x80.png'.') !important;';
+		 $logo.='background-image:url('.advance_login_style_URL . 'images/advance-login-style80x80.png'.') !important;';
 	}
 	
 	if(isset($options['logo_height']))
@@ -170,7 +170,7 @@ function advance_login_style_enque_script(){
 	
 	if(isset($options['text_shadow_size']))
 	{
-	    $advance_textmessage.='text-shadow:'.$options['text_shadow_size'].'px '.$options['text_shadow_size'].'px; '.$options['text_font_shadow_color'].'';
+	     $advance_textmessage.='text-shadow:'.$options['text_shadow_size'].'px '.$options['text_shadow_size'].'px  '.$options['text_font_shadow_color'].'';
 	}
 	$advance_textmessage.="}";
 
