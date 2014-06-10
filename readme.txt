@@ -1,7 +1,7 @@
 === Advance Login Style ===
 Contributors: pluginsbazaar
 Donate link: https://pluginsbazaar.com/
-Tags: Change Login, Custom Login, Login, Change Login Style, Chage Custom Login style
+Tags: Change Login, Custom Login, Login, Change Login Style, Chage Custom Login style, admin
 Requires at least: 3.0.1
 Tested up to: 3.9.1
 Stable tag: 1.0
