@@ -25,7 +25,7 @@ __Please Note:__ GitHub is for bug reports and contributions only - if you have 
 ## Code Documentation
 
 * We ensure that every Advance Login Style function is documented well and follows the standards set by phpDoc.
-* An example function can be found [here](https://gist.github.com/jdevalk/5574677)
+* An example function can be found [here](https://github.com/pluginsbazaar/advance-login-style/blob/master/advance_login_style-inc/advance_login_style-functions.php)
 * Please make sure that every function is documented so that other contributor can easily understand function working. 
 * Finally, please use tabs and not spaces. The tab indent size should be 8 for all Advance Login Style code.
 
