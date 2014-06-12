@@ -16,14 +16,14 @@ Advance Login Style can fully customise your WordPress Login, Register page.
 
 = Features of this plugin include: =
 
-*Ability to add message in your login page.
-*Ability to add a custom logo in your login page.
-*Ability to set login, logout and register redirect links.
-*Ability to set login body background image and also login body. background color.
-*Ability to set login form background image and also login form background color.
-*Ability to change a label font size and color. 
-*Ability to change a button font size and color.
-*Ability to change a link color.
+* Ability to add/change message in your login page.
+* Ability to add/change a custom logo in your login page.
+* Ability to set login, logout and register redirect links.
+* Ability to set login body background image and also login body. background color.
+* Ability to set login form background image and also login form background color.
+* Ability to change a label font size and color. 
+* Ability to change a button font size and color.
+* Ability to change a link color.
 
 
 == Installation ==
@@ -55,7 +55,6 @@ Answer to foo bar dilemma.
 == Screenshots ==
 
 1. Advance Login Style
-
 2. login form
 3. login logo
 4. example login page
