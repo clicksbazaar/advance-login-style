@@ -29,7 +29,7 @@ echo '<script type="text/javascript">
         });             
         </script>';
 
-echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance_login_style' ), true, 'cb_advance_login_style_options', 'advance_login_style' );
+echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance-login-style' ), true, 'cb_advance_login_style_options', 'advance_login_style' );
 
 echo $advance_login_style_admin_pages->textinput('After_Login_Redirect_Link', 'Login Redirect Link');
 echo "<br/>";

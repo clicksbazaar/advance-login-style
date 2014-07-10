@@ -109,8 +109,8 @@ class advance_login_style_Admin {
 		// Add my_help_tab if current screen is My Admin Page
 		$screen->add_help_tab( array(
 			'id'	=> 'advance_login_style_help_tab',
-			'title'	=> __('How to'),
-			'content'	=> '<p>' . __( 'Descriptive content that will show in My Help Tab-body goes here.' ) . '</p>',
+			'title'	=> __('How to', 'advance-login-style'),
+			'content'	=> '<p>' . __( 'Descriptive content that will show in My Help Tab-body goes here.', 'advance-login-style' ) . '</p>',
 			) 
 		);
 	
@@ -147,7 +147,7 @@ class advance_login_style_Admin {
 		static $this_plugin;
 		if ( empty( $this_plugin ) ) $this_plugin = 'wp-ab-theme-testing/wp-ab-theme-testing.php';
 		if ( $file == $this_plugin ) {
-			$settings_link = '<a href="' . admin_url( 'themes.php?page=advance_login_style_dashboard' ) . '">' . __( 'Settings', 'advance_login_style' ) . '</a>';
+			$settings_link = '<a href="' . admin_url( 'themes.php?page=advance_login_style_dashboard' ) . '">' . __( 'Settings', 'advance-login-style' ) . '</a>';
 						array_unshift( $links, $settings_link );
 		}
 		return $links;

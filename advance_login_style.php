@@ -52,7 +52,7 @@ if ( version_compare( PHP_VERSION, '5.2', '<' ) ) {
 	if ( is_admin() && ( !defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
 		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 		deactivate_plugins( __FILE__ );
-		wp_die( sprintf( __( 'WP AB Theme Testing requires PHP 5.2 or higher, as does WordPress 3.2 and higher. The plugin has now disabled itself. For more info, %s$1see this post%s$2.', 'advance_login_style' ), '<a href="https://clicksbazaar.com/">', '</a>' ) );
+		wp_die( sprintf( __( 'WP AB Theme Testing requires PHP 5.2 or higher, as does WordPress 3.2 and higher. The plugin has now disabled itself. For more info, %s$1see this post%s$2.', 'advance-login-style' ), '<a href="https://clicksbazaar.com/">', '</a>' ) );
 	} else {
 		return;
 	}

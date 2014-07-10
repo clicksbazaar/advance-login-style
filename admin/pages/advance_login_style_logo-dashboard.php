@@ -33,7 +33,7 @@ echo '<script type="text/javascript">
         });             
         </script>';
 
-echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance_login_style' ), true, 'cb_advance_login_style_logo_options', 'advance_login_style_logo' );
+echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance-login-style' ), true, 'cb_advance_login_style_logo_options', 'advance_login_style_logo' );
 
 echo '<script type="text/ecmascript">
 jQuery(document).ready(function($){

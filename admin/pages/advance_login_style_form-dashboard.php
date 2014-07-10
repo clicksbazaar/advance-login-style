@@ -58,7 +58,7 @@ echo '<script type="text/javascript">
         });             
         </script>';
 	
-echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance_login_style' ), true, 'cb_advance_login_style_form_options', 'advance_login_style_form' );
+echo $advance_login_style_admin_pages->admin_header( __( 'General Settings', 'advance-login-style' ), true, 'cb_advance_login_style_form_options', 'advance_login_style_form' );
 echo "</br>";
 
 echo '<script type="text/ecmascript">

@@ -65,7 +65,7 @@ class advance_login_style_Admin_Pages
 		<div class="box-header well" data-original-title="">
 		ADVANCED LOGIN STYLE		<?php 
 		if ( ( isset( $_GET['updated'] ) && $_GET['updated'] == 'true' ) || ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == 'true' ) ) {
-			$msg = __( 'Settings updated', 'advance_login_style' );
+			$msg = __( 'Settings updated', 'advance-login-style' );
 			echo ': <strong>' . esc_html( $msg ) . '</strong>';
 		}
 		?>
@@ -155,7 +155,7 @@ class advance_login_style_Admin_Pages
 			$option = $this->currentoption;
 
 		$options = $this->get_option( $option );
-
+$label=__($label,'advance-login-style');
 		if ( !isset( $options[$var] ) )
 			$options[$var] = false;
 
@@ -193,7 +193,7 @@ class advance_login_style_Admin_Pages
 	function textarea( $var, $label, $option = '', $class = '' ) {
 		if ( empty( $option ) )
 			$option = $this->currentoption;
-
+			$label=__($label,'advance-login-style');
 		$options = $this->get_option( $option );
 
 		$val = '';
@@ -213,7 +213,7 @@ class advance_login_style_Admin_Pages
 	function hidden( $var, $label, $option = '' ) {
 		if ( empty( $option ) )
 			$option = $this->currentoption;
-
+		$label=__($label,'advance-login-style');
 		$options = $this->get_option( $option );
 
 		$val = '';
@@ -228,7 +228,7 @@ class advance_login_style_Admin_Pages
 	function button( $var, $label, $option = '' ) {
 		if ( empty( $option ) )
 			$option = $this->currentoption;
-
+		$label=__($label,'advance-login-style');
 		$options = $this->get_option( $option );
 
 		$val = '';
@@ -242,7 +242,7 @@ class advance_login_style_Admin_Pages
 	function imageprivew( $var, $label, $option = '', $divid='' ) {
 		if ( empty( $option ) )
 			$option = $this->currentoption;
-
+$label=__($label,'advance-login-style');
 		$options = $this->get_option( $option );
 
 		$val = '';
@@ -255,7 +255,7 @@ class advance_login_style_Admin_Pages
 function selectimage( $var, $label, $option = '', $buttonid, $divid ) {
 if ( empty( $option ) )
 $option = $this->currentoption;
-
+$label=__($label,'advance-login-style');
 $options = $this->get_option( $option );
 
 $val = '';
@@ -278,7 +278,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 	$options=array();
 		if ( empty( $option ) )
 			$option = $this->currentoption;
-			
+			$label=__($label,'advance-login-style');
 		 $arr=$this->get_option( $option);
 		if(isset($arr[$var]))
 		 $options=$arr[$var];
@@ -315,6 +315,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 		if ( empty( $option ) )
 			$option = $this->currentoption;
 			$options = $this->get_option( $option );
+			$label=__($label,'advance-login-style');
 			$val = '';
 				if ( isset( $options[$var] ) )
 					$val = esc_attr( $options[$var] );
@@ -326,6 +327,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 		if ( empty( $option ) )
 			$option = $this->currentoption;
 			$options = $this->get_option( $option );
+			$label=__($label,'advance-login-style');
 			$val = '';
 				if ( isset( $options[$var] ) )
 					$val = esc_attr( $options[$var] );
@@ -337,6 +339,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 		if ( empty( $option ) )
 			$option = $this->currentoption;
 			$options = $this->get_option( $option );
+			$label=__($label,'advance-login-style');
 			$var_esc = esc_attr( $var );
 			$output  = '<label class="select" for="' . $var_esc . '">' . $label . ':</label>';
 			$output .= '<select class="select" name="' . $option . '[' . $var_esc . ']" id="' . $var_esc . '">';
@@ -357,6 +360,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 	{
 		if ( empty( $option ) )
 			$option = $this->currentoption;
+			$label=__($label,'advance-login-style');
 			$options = $this->get_option( $option );
 			$val = '';
 				if ( isset( $options[$var] ) && strtolower( gettype( $options[$var] ) ) == 'array' ) {
@@ -383,6 +387,7 @@ return '<label class="textinput" for="' . esc_attr( $var ) . '">' . $label . ':<
 		if ( empty( $option ) )
 			$option = $this->currentoption;
 			$options = $this->get_option( $option );
+			$label=__($label,'advance-login-style');
 			if ( !isset( $options[$var] ) )
 				$options[$var] = false;
 				$var_esc = esc_attr( $var );
