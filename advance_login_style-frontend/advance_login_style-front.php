@@ -4,7 +4,7 @@
 *
 */
 function advance_login_style_enque_script(){
-	//wp_enqueue_style( 'advance_login_style_plugin_tools', advance_login_style_URL . 'css/advance_login_style_plugin_tools.css', advance_login_style_VERSION );
+	
 	$options=get_advance_login_style_options();
 	
 	$css_login_form='#login form {';

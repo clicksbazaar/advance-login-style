@@ -5,7 +5,7 @@
 if ( !class_exists( 'advance_login_style_Admin' ) ) {
 
 /**
- * Class that holds most of the admin functionality for WP AB Theme Testing Plugin.
+ * Class that holds most of the admin functionality for Advance Login Style Plugin.
  */
 class advance_login_style_Admin {
 		
@@ -86,13 +86,18 @@ class advance_login_style_Admin {
 	function register_settings_page() {
 			
 		//$advance_login_style_page=add_theme_page('WP AB Theme', 'WP AB Theme', 'edit_theme_options', 'advance_login_style_dashboard', array( $this, 'config_page' ));
+		
 		add_menu_page( 'Advance Login Style', 'Advance Login', 'manage_options','advance_login_style-dashboard', array( $this, 'config_page' ),advance_login_style_URL . 'images/advance-login-style20x20.png', 6 );
 		
 		
 		add_submenu_page( 'advance_login_style-dashboard', 'Login Form', 'Login Form', 'manage_options', 'advance_login_style_form-dashboard', array( $this, 'form_page' )); 
+		
 		add_submenu_page( 'advance_login_style-dashboard', 'Login Logo', 'Login Logo', 'manage_options', 'advance_login_style_logo-dashboard', array( $this, 'logo_page' ));
+		
 		 //add_menu_page( 'Advance Login Style', 'Advance Login Style', 'manage_options', 'advance_login_style-dashboard',  array( $this, 'config_page' )'', plugins_url( 'myplugin/images/icon.png' ), 6 );
-	//add_options_page( 'test', 'test1', 'manage_options', 'advance_login_style-dashboard', array( $this, 'config_page' ));
+		
+		//add_options_page( 'test', 'test1', 'manage_options', 'advance_login_style-dashboard', array( $this, 'config_page' ));
+		
 		// Adds advance_login_style_help_tab when advance_login_style_page loads
 		//add_action('load-'.$advance_login_style_page, array($this,'advance_login_style_admin_add_help_tab'));	
 	}
@@ -117,7 +122,7 @@ class advance_login_style_Admin {
 	}
 	
 	/** 
-	* @desc callback function to show setting page.
+	* @desc callback function to show login style dashboard page.
 	* @param none
 	* @return none
 	*/
@@ -126,12 +131,24 @@ class advance_login_style_Admin {
 			include( advance_login_style_PATH . '/admin/pages/advance_login_style-dashboard.php' );
 				
 	}
+	
+	/** 
+	* @desc callback function to show login form style dashboard page.
+	* @param none
+	* @return none
+	*/
 	function form_page() {
 		if ( isset( $_GET['page'] ) && 'advance_login_style_form-dashboard' == $_GET['page'] )
 			include( advance_login_style_PATH . '/admin/pages/advance_login_style_form-dashboard.php' );
 				
 	}
-		function logo_page() {
+	
+	/** 
+	* @desc callback function to show login logo dashboard page.
+	* @param none
+	* @return none
+	*/
+	function logo_page() {
 		if ( isset( $_GET['page'] ) && 'advance_login_style_logo-dashboard' == $_GET['page'] )
 			include( advance_login_style_PATH . '/admin/pages/advance_login_style_logo-dashboard.php' );
 				
@@ -145,9 +162,9 @@ class advance_login_style_Admin {
 	*/
 	function add_action_link( $links, $file ) {
 		static $this_plugin;
-		if ( empty( $this_plugin ) ) $this_plugin = 'wp-ab-theme-testing/wp-ab-theme-testing.php';
+		if ( empty( $this_plugin ) ) $this_plugin = 'advance_login_style/advance_login_style.php';
 		if ( $file == $this_plugin ) {
-			$settings_link = '<a href="' . admin_url( 'themes.php?page=advance_login_style_dashboard' ) . '">' . __( 'Settings', 'advance-login-style' ) . '</a>';
+			$settings_link = '<a href="' . admin_url( 'admin.php?page=advance_login_style-dashboard' ) . '">' . __( 'Settings', 'advance-login-style' ) . '</a>';
 						array_unshift( $links, $settings_link );
 		}
 		return $links;

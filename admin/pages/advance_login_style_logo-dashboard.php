@@ -7,7 +7,7 @@
  */
  
 global $advance_login_style_admin_pages;
-//var_dump($advance_login_style_admin_pages);
+
 $options = get_option( 'advance_login_style_logo' );
 
 echo '<script type="text/javascript">

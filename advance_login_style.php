@@ -4,12 +4,13 @@
 	Plugin URI: https://pluginsbazaar.com/ 
     Description: Advance Login Style can fully customize your WordPress Login, Register page.
 	Author: pluginsbazaar.com 
-    Version: 1.0 
+    Version: 1.1 
 	Short Name: advance_login_style
     Author URI: https://pluginsbazaar.com/
-	Requires at least: 2.7
+	Requires at least: 3.2
 	Tested up to: 3.9.1
-	Stable tag: 1.0
+	Stable tag: 1.1
+	Text Domain: advance-login-style
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
     */  
@@ -42,9 +43,9 @@ if ( !defined( 'advance_login_style_VERSION' ) )
 	define( 'advance_login_style_VERSION', '1.0' );
 	
 function advance_login_style_load_textdomain() {
-	load_plugin_textdomain( 'advance_login_style', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
+	load_plugin_textdomain( 'advance-login-style', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
-//add_filter( 'wp_loaded', 'wpabtheme_load_textdomain' );	
+add_filter( 'init', 'advance_login_style_load_textdomain',1 );	
 
 // don't load directly
 !defined('ABSPATH') && exit;
@@ -52,7 +53,7 @@ if ( version_compare( PHP_VERSION, '5.2', '<' ) ) {
 	if ( is_admin() && ( !defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
 		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 		deactivate_plugins( __FILE__ );
-		wp_die( sprintf( __( 'WP AB Theme Testing requires PHP 5.2 or higher, as does WordPress 3.2 and higher. The plugin has now disabled itself. For more info, %s$1see this post%s$2.', 'advance-login-style' ), '<a href="https://clicksbazaar.com/">', '</a>' ) );
+		wp_die( sprintf( __( 'Advanced Login Style requires PHP 5.2 or higher, as does WordPress 3.2 and higher. The plugin has now disabled itself. For more info, %s$1see this post%s$2.', 'advance-login-style' ), '<a href="https://github.com/pluginsbazaar/advance-login-style/">', '</a>' ) );
 	} else {
 		return;
 	}
@@ -100,7 +101,6 @@ if ( is_admin() ) {
 else 
 {
 	//front end
-	//require advance_login_style_PATH. 'advance_login_style-frontend/plugin-bazaar-login.php';
 	require advance_login_style_PATH. 'advance_login_style-frontend/advance_login_style-front.php';
 }
 unset( $options );

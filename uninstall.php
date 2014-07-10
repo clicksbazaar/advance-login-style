@@ -9,5 +9,5 @@ if( !defined( 'ABSPATH') && !defined('WP_UNINSTALL_PLUGIN') )
     exit();
 
 global $wpdb;
-	// Delete options table data of wp ab theme testing plugin.
-	$wpdb->query("DELETE FROM $wpdb->options WHERE option_name like 'wpabtheme%'");
+	// Delete options table data of advance login style plugin.
+	$wpdb->query("DELETE FROM $wpdb->options WHERE option_name like 'advance_login_style%'");

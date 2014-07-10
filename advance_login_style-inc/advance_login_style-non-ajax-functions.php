@@ -5,7 +5,7 @@
  * @link 
  * @since 
  *
- * @package wpabtheme-inc
+ * @package advance_login_style-inc
  * @subpackage none
  */
 	
