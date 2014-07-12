@@ -4,7 +4,7 @@ Donate link: http://pluginsbazaar.com/
 Tags: Change Login, Custom Login, Login, Change Login Style, Chage Custom Login style, admin
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,8 +24,12 @@ Advance Login Style can fully customise your WordPress Login, Register page.
 * Ability to change a label font size and color. 
 * Ability to change a button font size and color.
 * Ability to change a link color.
+* New Feature: Change link of logo on login page.
+* New Feature: Change tooltip when you rollover the logo.
+
 
 = Advance Login Style Plugin in your Language!: =
+
 We just made plugin language compatible.
 If you're good at translating, please join us at [Advance Login Style at GitHub](https://github.com/pluginsbazaar/advance-login-style/)
 
@@ -47,13 +51,15 @@ If you would prefer to do things manually then follow these instructions:
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= How to change Link of Logo on Login page? =
 
-An answer to that question.
+You can change link of logo on login page. Go to Advance Login Style -> Login Logo menu.
+And add your custom link in "Link of Logo:" text box. ( Default link is your site url).
 
-= What about foo bar? =
+= How to change tooltip when rollover the logo? =
+You can change tooltip when rollover the logo on login page. Go to "Advance Login Style" -> "Login Logo" menu.
+And add your custom tooltip text in "Tooltip on Logo:" text box. ( Default is your site tag line).
 
-Answer to foo bar dilemma.
 
 == Screenshots ==
 
@@ -65,6 +71,10 @@ Answer to foo bar dilemma.
 
 == Changelog ==
 
+= 1.2 =
+* New Feature: Change link of logo on login page.
+* New Feature: Change tooltip when you rollover the logo.
+
 = 1.1 =
 * Plugin Translation compatible.
 
@@ -74,9 +84,14 @@ Answer to foo bar dilemma.
 
 == Upgrade Notice ==
 
+= 1.2 =
+Update plugin new version which include:
+* New Feature: Change link of logo on login page.
+* New Feature: Change tooltip when you rollover the logo.
+
 = 1.0 =
 First public release.
 
 == License ==
 
-
+License URI: http://www.gnu.org/licenses/gpl-2.0.html

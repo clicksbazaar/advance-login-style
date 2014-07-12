@@ -79,6 +79,14 @@ echo "<br/>";
 
 echo $advance_login_style_admin_pages->inputnumber('text_shadow_size', 'Shadaw Type'  ,'', 'px');
 echo "<br/>";
- echo $advance_login_style_admin_pages->textinput('text_font_shadow_color','Shadaw Color');
+echo $advance_login_style_admin_pages->textinput('text_font_shadow_color','Shadaw Color');
+ 
+ echo "<hr>";
+echo "<h2 style=''>Change link of logo and tooltip when you rollover on logo</h2>";
+
+echo $advance_login_style_admin_pages->textinput('linkoflogo','Link of Logo');
+echo "<br/>";
+
+echo $advance_login_style_admin_pages->textinput('tooltiplogo','Tooltip on Logo');
 
 $advance_login_style_admin_pages->admin_footer();

@@ -4,12 +4,12 @@
 	Plugin URI: https://pluginsbazaar.com/ 
     Description: Advance Login Style can fully customize your WordPress Login, Register page.
 	Author: pluginsbazaar.com 
-    Version: 1.1 
+    Version: 1.2 
 	Short Name: advance_login_style
     Author URI: https://pluginsbazaar.com/
 	Requires at least: 3.2
 	Tested up to: 3.9.1
-	Stable tag: 1.1
+	Stable tag: 1.2
 	Text Domain: advance-login-style
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,7 +40,7 @@ if ( !defined( 'advance_login_style_BASENAME' ) )
 	define( 'advance_login_style_BASENAME', plugin_basename( __FILE__ ) );
 	
 if ( !defined( 'advance_login_style_VERSION' ) )
-	define( 'advance_login_style_VERSION', '1.0' );
+	define( 'advance_login_style_VERSION', '1.2' );
 	
 function advance_login_style_load_textdomain() {
 	load_plugin_textdomain( 'advance-login-style', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );

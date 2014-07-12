@@ -3,6 +3,8 @@
 * This function will enque our script to login page.
 *
 */
+add_action( 'login_enqueue_scripts', 'advance_login_style_enque_script', 1 );
+
 function advance_login_style_enque_script(){
 	
 	$options=get_advance_login_style_options();
@@ -177,8 +179,9 @@ function advance_login_style_enque_script(){
 	echo '<style type="text/css">'.$css_login_form.''.$css_login_form_label.''.$button.''.$button_onhover.''.$logo.''.$body.''.$bodylink.''.$bodylink1.''.$advance_textmessage.'</style>';
 
 }
-	add_filter( 'login_message', 'the_advance_login_style_message' );
-	function the_advance_login_style_message( $message )
+	
+add_filter( 'login_message', 'the_advance_login_style_message' );
+function the_advance_login_style_message( $message )
 	{
 		if ( empty($message) ){
 		$options=get_option( 'advance_login_style_logo' );
@@ -192,8 +195,9 @@ function advance_login_style_enque_script(){
         return $message;
     }
 }
-	add_action( 'init', 'advance_login_style_redirect' );
-	function advance_login_style_redirect()
+	
+add_action( 'init', 'advance_login_style_redirect' );
+function advance_login_style_redirect()
 	{
 		$options=get_advance_login_style_options();
 		if(isset($options['After_Logout_Redirect_Link']))
@@ -212,8 +216,8 @@ function advance_login_style_enque_script(){
 		else return wp_login_url();
 	}
 
-	add_filter( 'registration_redirect', 'advance_login_style_registration_redirect' );
-	function advance_login_style_registration_redirect()
+add_filter( 'registration_redirect', 'advance_login_style_registration_redirect' );
+function advance_login_style_registration_redirect()
 	{
 		$options=get_advance_login_style_options();
 		$options= $options['After_Logout_Redirect_Link'];	
@@ -223,8 +227,9 @@ function advance_login_style_enque_script(){
 		return $options;
 		}
 	} 
-	add_filter( 'login_redirect', 'advance_login_style_login_redirect' );
-	function advance_login_style_login_redirect()
+	
+add_filter( 'login_redirect', 'advance_login_style_login_redirect' );
+function advance_login_style_login_redirect()
 	{
 		$options=get_advance_login_style_options();
 		
@@ -238,5 +243,34 @@ function advance_login_style_enque_script(){
 		
 	}
 
-	add_action( 'login_enqueue_scripts', 'advance_login_style_enque_script', 1 );
 
+function advance_login_style_custom_link() {
+
+		$options=get_advance_login_style_options();
+		
+		$options= $options['linkoflogo'];
+			if ( !empty($options) )
+			{
+				$rlink=$options;
+			
+			} else {
+				$rlink=get_site_url();
+			}
+		return $rlink;
+}
+add_filter('login_headerurl','advance_login_style_custom_link');
+
+function advance_login_style_title_on_logo() {
+	$options=get_advance_login_style_options();
+		
+	$options= $options['tooltiplogo'];
+			if ( !empty($options) )
+			{
+				$tooltiplogo=$options;
+			
+			} else {
+				$tooltiplogo=get_bloginfo ( 'description' );
+			}
+	return $tooltiplogo;
+}
+add_filter('login_headertitle', 'advance_login_style_title_on_logo');
